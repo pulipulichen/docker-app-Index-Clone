@@ -36,10 +36,13 @@ let main = async function () {
       let relativePath = indexFileList[i]
       let indexFilePath = path.join(directoryPath, relativePath)
       let cloneFilePath = path.join(directoryPath + '.index', relativePath)
-      console.log(cloneFilePath)
+      // console.log(cloneFilePath)
 
       let cloneFolderPath = path.dirname(cloneFilePath)
-      console.log(cloneFolderPath)
+      fs.mkdirSync(cloneFolderPath, {recursive: true})
+
+      fs.copyFileSync(indexFilePath, cloneFilePath)
+      // console.log(cloneFolderPath)
       // console.log(noteFilePath, cloneFolderPath)
 
       // ShellExec(`cp -r ${noteFilePath} ${cloneFolderPath}`)
