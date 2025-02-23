@@ -26,12 +26,27 @@ let main = async function () {
       continue
     }
 
+
+    // ===============================
+    // 清空
+
+    let indexDirectoryPath = directoryPath + '.index'
+
+    // clear indexDirectoryPath subfolders
+    if (fs.existsSync(indexDirectoryPath)) {
+      fs.unlinkSync(indexDirectoryPath)
+    }
+    
+    // ===============================
+
     let indexFileList = GetDeepFileList(directoryPath, (filePath) => {
       
       let result = IsIndexFile(filePath)
       // console.log(filePath, result)
       return result
     })
+
+    // ===============================
 
     for (let i = 0; i < indexFileList.length; i++) {
       let relativePath = indexFileList[i]
