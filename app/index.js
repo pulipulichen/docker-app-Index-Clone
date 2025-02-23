@@ -6,8 +6,9 @@ const path = require('path')
 const fs = require('fs')
 
 const IsIndexFile = require('./index-clone/IsIndexFile')
-const BuildCloneFolder = require('./index-clone/BuildCloneFolder')
+// const BuildCloneFolder = require('./index-clone/BuildCloneFolder')
 const GetDeepFileList = require('./index-clone/GetDeepFileList')
+const DirectoryToList = require('./archive-list/DirectoryToList')
 
 // -------------------------------------------------------------
 
@@ -48,6 +49,12 @@ let main = async function () {
       // ShellExec(`cp -r ${noteFilePath} ${cloneFolderPath}`)
       // ShellSpawn(`cp -r ${noteFilePath} ${cloneFolderPath}`, { shell: true })
     }
+
+    // ===============================
+    // 然後根據目標資料夾產生 list 檔案
+
+    DirectoryToList(directoryPath)
+
   }
 }
 
