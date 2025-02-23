@@ -14,7 +14,7 @@ function GetDeepFileList(dir, callback, baseDir, fileList = []) {
             if (file.isDirectory()) {
                 GetDeepFileList(filePath, callback, baseDir, fileList);
             } else {
-                if (callback(file)) {
+                if (callback(relativePath)) {
                   fileList.push(relativePath);
                 }
                   
