@@ -28,11 +28,12 @@ let main = async function () {
     let indexFileList = GetDeepFileList(directoryPath, (filePath) => {
       
       let result = IsIndexFile(filePath)
-      console.log(filePath, result)
+      // console.log(filePath, result)
       return result
     })
 
-    for (let relativePath in indexFileList) {
+    for (let i = 0; i < indexFileList.length; i++) {
+      let relativePath = indexFileList[i]
       let indexFilePath = path.join(directoryPath, relativePath)
       let cloneFilePath = path.join(directoryPath + '.index', relativePath)
       console.log(cloneFilePath)
