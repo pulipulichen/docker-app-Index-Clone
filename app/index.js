@@ -26,9 +26,21 @@ let main = async function () {
     }
 
     let indexFileList = GetDeepFileList(directoryPath, (filePath) => {
-      console.log(filePath)
+      // console.log(filePath)
       return IsIndexFile(filePath)
     })
+
+    for (let relativePath in indexFile) {
+      let indexFilePath = path.join(directoryPath, relativePath)
+      let cloneFilePath = path.join(directoryPath + '.index', relativePath)
+
+      let cloneFolderPath = path.dirname(cloneFilePath)
+      console.log(cloneFolderPath)
+      // console.log(noteFilePath, cloneFolderPath)
+
+      // ShellExec(`cp -r ${noteFilePath} ${cloneFolderPath}`)
+      // ShellSpawn(`cp -r ${noteFilePath} ${cloneFolderPath}`, { shell: true })
+    }
   }
 }
 
