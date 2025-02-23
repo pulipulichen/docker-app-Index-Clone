@@ -30,10 +30,6 @@ let main = async function () {
 
     console.log('Processing... ' + directoryPath)
 
-    await sleep(30 * 1000)
-
-    continue
-
     // ===============================
     // 清空
 
