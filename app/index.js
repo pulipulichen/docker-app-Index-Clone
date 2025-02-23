@@ -26,6 +26,7 @@ let main = async function () {
       continue
     }
 
+    console.log('Processing... ' + directoryPath)
 
     // ===============================
     // 清空
