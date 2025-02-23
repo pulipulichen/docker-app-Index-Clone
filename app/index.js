@@ -10,6 +10,8 @@ const IsIndexFile = require('./index-clone/IsIndexFile')
 const GetDeepFileList = require('./index-clone/GetDeepFileList')
 const DirectoryToList = require('./archive-list/DirectoryToList')
 
+const sleep = require('./lib/sleep')
+
 // -------------------------------------------------------------
 
 
@@ -27,6 +29,10 @@ let main = async function () {
     }
 
     console.log('Processing... ' + directoryPath)
+
+    await sleep(30 * 1000)
+
+    continue
 
     // ===============================
     // 清空
