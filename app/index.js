@@ -35,6 +35,7 @@ let main = async function () {
     for (let relativePath in indexFileList) {
       let indexFilePath = path.join(directoryPath, relativePath)
       let cloneFilePath = path.join(directoryPath + '.index', relativePath)
+      console.log(cloneFilePath)
 
       let cloneFolderPath = path.dirname(cloneFilePath)
       console.log(cloneFolderPath)
