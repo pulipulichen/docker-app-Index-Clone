@@ -26,8 +26,10 @@ let main = async function () {
     }
 
     let indexFileList = GetDeepFileList(directoryPath, (filePath) => {
-      console.log(filePath)
-      return IsIndexFile(filePath)
+      
+      let result = IsIndexFile(filePath)
+      console.log(filePath, result)
+      return result
     })
 
     for (let relativePath in indexFileList) {
