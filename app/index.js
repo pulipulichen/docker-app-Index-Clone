@@ -30,7 +30,7 @@ let main = async function () {
       return IsIndexFile(filePath)
     })
 
-    for (let relativePath in indexFile) {
+    for (let relativePath in indexFileList) {
       let indexFilePath = path.join(directoryPath, relativePath)
       let cloneFilePath = path.join(directoryPath + '.index', relativePath)
 
