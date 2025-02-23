@@ -34,9 +34,9 @@ let main = async function () {
 
     // clear indexDirectoryPath subfolders
     if (fs.existsSync(indexDirectoryPath)) {
-      fs.unlinkSync(indexDirectoryPath)
+      fs.unlinkSync(indexDirectoryPath, { recursive: true})
     }
-    
+
     // ===============================
 
     let indexFileList = GetDeepFileList(directoryPath, (filePath) => {
