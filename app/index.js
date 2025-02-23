@@ -26,7 +26,7 @@ let main = async function () {
     }
 
     let indexFileList = GetDeepFileList(directoryPath, (filePath) => {
-      // console.log(filePath)
+      console.log(filePath)
       return IsIndexFile(filePath)
     })
 
